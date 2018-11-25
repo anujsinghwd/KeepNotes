@@ -4,13 +4,12 @@ A simple note application
 
 ## To see how it's work
 
-Fork and star this repo**<br>
-Clone this repo**<br>
-git clone https://github.com/anujsinghwd/KeepNotes.git<br>
-Run command npm install
-Run command npm run dev
-  
-
+- Fork and star this repo**
+- Clone this repo**
+- git clone https://github.com/anujsinghwd/KeepNotes.git
+- Run `npm install`
+- Run `npm run dev`
+<br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
