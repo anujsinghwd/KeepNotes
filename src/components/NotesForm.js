@@ -6,9 +6,11 @@ class NotesForm extends Component {
       event.preventDefault();
       let title = this.refs.title.value;
       let body = this.refs.body.value;
-      this.props.add_note(title, body);
+      let img = this.refs.imgSrc.value;
+      this.props.add_note(title, body, img);
       this.refs.title.value = '';
       this.refs.body.value = '';
+      this.refs.imgSrc.value = '';
   }
 
   render(){
@@ -24,6 +26,13 @@ class NotesForm extends Component {
                   <label htmlFor="title">Title</label>
                 </div>
               </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="src" type="url" ref="imgSrc" class="validate" placeholder="http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png" />
+                  <label for="src">Image URL</label>
+                </div>
+            </div>
 
               <div className="row">
                 <div className="input-field col s12">

@@ -6,7 +6,7 @@ class Header extends Component {
       <div>
         <nav className="grey darken-3 header-style">
           <div className="nav-wrapper">
-            <a>Material Notes</a>
+            <a style={{'font-size': '25px'}}>Keep Notes</a>
           </div>
         </nav>
       </div>

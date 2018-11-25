@@ -31,7 +31,7 @@ class App extends Component {
     .then((data) => {
       if(data['status'] === 200)
       {
-          this.setState({notes_data: data['data']});
+        this.setState({notes_data: data['data']});
       }
       else
       {
@@ -72,7 +72,7 @@ class App extends Component {
    .catch((error) => console.log('There was a problem in fetching data '+error));
   }
 
-  addNotes(title, body)
+  addNotes(title, body, img)
   {
     let finalURL = `${API_URL}/addNote`;
     fetch(finalURL,
@@ -84,14 +84,16 @@ class App extends Component {
          'Content-Type': 'application/json',
 
       },
-      body: JSON.stringify({title: title, body: body})
+      body: JSON.stringify({title: title, body: body, img_src: img})
     })
     .then((res) => res.json())
     .then((data) => {
       if(data['status'] === 201)
       {
+          let d = new Date();
+          var timestamp = d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes();
           this.setState({
-              notes_data: this.state.notes_data.concat({"title": title, "body": body})
+              notes_data: this.state.notes_data.concat({"title": title, "body": body, "timestamp": timestamp, "img_src": img})
             });
           NotificationManager.success('Note created successfully','Created');
       }
@@ -107,7 +109,7 @@ class App extends Component {
     let notes;
     if(this.state.notes_data){
       notes = this.state.notes_data.map((data, i) => {
-          return <NoteCard key={i} title={data['title']} body={data['body']} delete_note={this.deleteNotes.bind(this)}/>;
+          return <NoteCard key={i} image={data['img_src']} time_stamp={data['timestamp']} title={data['title']} body={data['body']} delete_note={this.deleteNotes.bind(this)}/>;
       });
 
     }

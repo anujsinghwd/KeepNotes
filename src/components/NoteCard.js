@@ -13,12 +13,13 @@ class NoteCard extends Component {
   render(){
     let title = this.props.title;
     let body = this.props.body;
+    let timestamp = this.props.time_stamp;
     return(
       <div>
         <div className="col s12 m6 l3">
           <div className="card white hoverable">
             <div className="card-image">
-              <img src="http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png" />
+              <img src={this.props.image} />
               <span className="card-title">{title}</span>
               <a onClick={this.deleteNote.bind(this, title)} className="btn-floating halfway-fab waves-effect waves-light amber darken-4"><i className="material-icons">delete<p style={{display: 'none'}}>{title}</p></i></a>
             </div>
@@ -27,7 +28,7 @@ class NoteCard extends Component {
                 {body}
               </p>
             </div>
-            <div className="card-action orange-text">Created on: <i>2017-12-11</i>
+            <div className="card-action orange-text">Created on: <i>{timestamp}</i>
             </div>
           </div>
         </div>

@@ -6,7 +6,8 @@ var add_note = (req) => {
   console.log(req);
   if(req.body.title && req.body.body)
   {
-      var note = notes.addNote(req.body.title, req.body.body);
+      let img_src = (req.body.img_src) ? req.body.img_src : "http://www.gavaghan.ca/wp-content/uploads/2014/09/placeholder.png";
+      var note = notes.addNote(req.body.title, req.body.body, img_src);
       if(note)
       {
         status = 201;

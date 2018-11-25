@@ -13,11 +13,15 @@ var saveNotes = (notes) => {
     fs.writeFileSync('notes-data.json', JSON.stringify(notes));
 };
 
-var addNote = (title, body) => {
+var addNote = (title, body, img_src) => {
     var notes = fetchNotes();
+    var d = new Date();
+    var timestamp = d.getFullYear()+"-"+d.getMonth()+"-"+d.getDate()+" "+d.getHours()+":"+d.getMinutes();
     var note = {
         title,
-        body
+        body,
+        img_src,
+        timestamp
     };
 
     var duplicateNotes = notes.filter((note) => note.title === title);
