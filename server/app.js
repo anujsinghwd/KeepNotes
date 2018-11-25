@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(helmet());
 
-app.use('/notes', notes);
+app.use('/apis/notes', notes);
 
 app.listen(port, () => {
     console.log(`Server started at port: ${port}`);

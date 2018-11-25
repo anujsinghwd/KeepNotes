@@ -3,6 +3,7 @@ const notes = require('../models/notes');
 var add_note = (req) => {
   let response;
   let status;
+  console.log(req);
   if(req.body.title && req.body.body)
   {
       var note = notes.addNote(req.body.title, req.body.body);
