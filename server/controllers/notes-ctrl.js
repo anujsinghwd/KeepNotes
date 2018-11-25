@@ -15,7 +15,7 @@ var add_note = (req) => {
       else
       {
         status = 400;
-        response = {"status": 400, "message": "something went wrong!"};
+        response = {"status": 400, "message": "Note already exists"};
       }
   }
   else
