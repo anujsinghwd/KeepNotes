@@ -19,7 +19,7 @@ class NoteCard extends Component {
         <div className="col s12 m6 l3">
           <div className="card white hoverable">
             <div className="card-image">
-              <img src={this.props.image} />
+              <img alt="" src={this.props.image} />
               <span className="card-title">{title}</span>
               <a onClick={this.deleteNote.bind(this, title)} className="btn-floating halfway-fab waves-effect waves-light amber darken-4"><i className="material-icons">delete<p style={{display: 'none'}}>{title}</p></i></a>
             </div>

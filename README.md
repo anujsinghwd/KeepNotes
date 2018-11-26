@@ -2,6 +2,10 @@
 
 A simple note application
 
+## Preview
+
+![Preview](keep-notes.gif)
+
 ## To see how it's work
 
 - Fork and star this repo**
